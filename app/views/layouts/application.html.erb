@@ -11,6 +11,25 @@
   </head>
 
   <body>
+    <% if notice.present? %>
+      <p class=notice><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class=alert><%= alert %></p>
+    <% end %>
+    <header class=contentHeader>
+      <%= link_to "users" do %>
+        <%= image_tag "https://rails-02-sample.herokuapp.com/assets/common/logo.png", class: "headerLogo", alt: "サイトロゴ"  %>
+      <% end %>
+      <ul class=accountNav>
+        <li class=accountItems_login>
+          <%= link_to "ログイン", :new_user_session, class: "login" %>
+        </li>
+        <li class=accountItems_register>
+          <%= link_to "新規登録", :new_user_registration, class: "registration" %>
+        </li>
+      </ul>
+    </header>
     <%= yield %>
   </body>
 </html>

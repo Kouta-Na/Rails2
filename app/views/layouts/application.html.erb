@@ -11,25 +11,52 @@
   </head>
 
   <body>
-    <% if notice.present? %>
-      <p class=notice><%= notice %></p>
-    <% end %>
-    <% if alert.present? %>
-      <p class=alert><%= alert %></p>
-    <% end %>
     <header class=contentHeader>
-      <%= link_to "users" do %>
+      <%= link_to "/users" do %>
         <%= image_tag "https://rails-02-sample.herokuapp.com/assets/common/logo.png", class: "headerLogo", alt: "サイトロゴ"  %>
       <% end %>
-      <ul class=accountNav>
-        <li class=accountItems_login>
-          <%= link_to "ログイン", :new_user_session, class: "login" %>
-        </li>
-        <li class=accountItems_register>
-          <%= link_to "新規登録", :new_user_registration, class: "registration" %>
-        </li>
-      </ul>
+      <% if user_signed_in? %>
+        <div class=dropdown id=dropdown>
+          <%= image_tag current_user.img.url, class: "profile_avatar", alt: "アバター" %>
+          <div class=profile_name >
+            <%= current_user.name %>
+          </div>
+          <ul class="dropdown_menu hidden" id=dropdown_menu>
+            <li class=dropdown_menu_items>
+              <%= link_to "アカウント設定", user_path(current_user.id), class: "dropdown_link" %>
+            </li>
+            <li class=dropdown_menu_items> 
+              <%= link_to "ログアウト", :destroy_user_session, method: :delete, class: "dropdown_link" %>
+            </li>
+          </ul>
+        </div>
+
+
+      <% else %>
+        <ul class=accountNav>
+          <li class=accountItems_login>
+            <%= link_to "ログイン", :new_user_session, class: "login" %>
+          </li>
+          <li class=accountItems_register>
+            <%= link_to "新規登録", :new_user_registration, class: "registration" %>
+          </li>
+        </ul>
+      <% end %>
     </header>
+    <% if notice.present? %>
+      <div class=message><%= notice %></div>
+    <% end %>
+    <% if alert.present? %>
+      <div class=message><%= alert %></div>
+    <% end %>
     <%= yield %>
+    <footer class=footer>
+      <div class=footerItems>
+        <%= link_to "/users" do %>
+          <%= image_tag "https://rails-02-sample.herokuapp.com/assets/common/logo.png", class: "footerLogo", alt: "サイトロゴ"  %>
+        <% end %>
+        <p class=footer_copyright>Copyright © Potepan Share 2024 All rights reserved</p>
+      </div>
+    </footer>
   </body>
 </html>

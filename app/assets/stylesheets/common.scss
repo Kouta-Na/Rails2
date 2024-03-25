@@ -77,3 +77,136 @@ body{
   height: 40px;
   border-color: #ff7757;
 }
+
+.message{
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+  position: fixed;
+  width: fit-content;
+  min-width: 288px;
+  margin: auto;
+  padding: 14px 16px;
+  bottom: 16px;
+  right: 0;
+  left: 0;
+}
+
+.dropdown{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile_avatar{
+  width: 40px;
+  margin-right: 8px;
+  border-radius: 60px;
+}
+
+.profile_name{
+  color: #fff;
+}
+
+.dropdown_menu{
+  display: block;
+  position: absolute;
+  list-style: none;
+  text-align: left;
+  background-color: #fff;
+  top: 50px;
+  border-radius: 0.25rem;
+  padding: 9px 0;
+  min-width: 122px;
+
+}
+
+.dropdown_menu_items{
+  align-items: center;
+  padding: 0 8px;
+}
+
+.dropdown_link{
+  text-decoration: none;
+  color: #000;
+
+}
+
+.hidden{
+  display: none;
+}
+
+.footer{
+  background-color: #1c1d3b;
+  align-items: center;
+  display: flex;
+  height: 465px;
+}
+
+.footerItems{
+  padding: 0 32px;
+}
+
+.footerLogo{
+  width: 220px;
+}
+
+.footer_copyright{
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.userSection{
+  max-width: 1440px;
+  padding: 40px 32px 160px 32px;
+}
+
+h2{
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.userContainer{
+  max-width: 700px;
+
+}
+
+.userInformation{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dfe2e6;
+  margin-bottom: 10px;
+}
+
+.userInformation_content{
+  display: flex;
+  align-items: center;
+
+}
+
+h3{
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.userInformation_label{
+  width: 25%;
+}
+
+.field_img{
+  display: flex;
+  align-items: center;
+
+}
+
+.field_img_up{
+  margin-left: 10px;
+}
+
+.field_img_avatar{
+  border-radius: 100px;
+}

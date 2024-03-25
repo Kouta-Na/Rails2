@@ -1,0 +1,32 @@
+<div class=accountForm>
+  <div class=accountForm_container>
+    <h2>プロフィール編集</h2>
+
+    <%= form_with model: @user do |f|%>
+
+      <div class="field">
+        <%= f.label :アイコン画像 %><br />
+        <div class=field_img>
+          <%= image_tag current_user.img.url, alt: "アバター", class: "field_img_avatar" %>
+          <%= f.file_field :img, class: "field_img_up" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label :名前 %><br />
+        <%= f.text_field :name, class: "fieldContent" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :自己紹介 %><br />
+        <%= f.text_area :introduction, class: "fieldContent" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "保存", class: "actionsBtn" %>
+      </div>
+    <% end %>
+
+    <%= link_to "キャンセル", user_path(current_user.id) %>     
+  </div>
+</div>

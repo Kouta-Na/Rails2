@@ -1,0 +1,40 @@
+<section class=userSection>
+  <h2>設定</h2>
+  <div class=userContainer>
+    <div class=userInformation>
+      <h3>アカウント</h3>
+      <%= link_to "編集", edit_user_registration_path(current_user.id)  %>
+    </div>
+    <div>
+      <div class=userInformation_content>
+        <p class=userInformation_label>メールアドレス</p>
+        <p><%= current_user.email%></p>
+      </div>
+      <div class=userInformation_content>
+        <p class=userInformation_label>パスワード</p>
+        <p>**********</p>
+      </div>
+      
+    </div>
+    <div class=userInformation>
+      <h3>プロフィール</h3>
+      <%= link_to "編集", edit_user_path(current_user.id)  %>
+    </div>
+    <div>
+      <div class=userInformation_content>
+        <p class=userInformation_label>アイコン画像</p>
+        <%=image_tag current_user.img.url ,alt: "アバター", class: "field_img_avatar" %>
+      </div>
+      <div class=userInformation_content>
+        <p class=userInformation_label>名前</p>
+        <p><%= current_user.name%></p>
+      </div>      
+      <div class=userInformation_content>
+        <p class=userInformation_label>自己紹介</p>
+        <p><%= current_user.introduction%></p>
+      </div> 
+      
+    </div>
+  </div>
+</section>
+

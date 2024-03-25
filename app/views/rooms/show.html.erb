@@ -1,0 +1,31 @@
+<section class=userSection>
+  <h2>登録済み一覧</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>画像</th>
+        <th>施設名</th>
+        <th>紹介文</th>
+        <th>料金</th>
+        <th>作成日</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @rooms.each do |room| %>
+        <tr>
+          <% if room.img? %>
+            <td><%= image_tag room.img.url, alt: "施設画像", class: "room_img" %></td>
+          <% else %>
+            <td><%= image_tag "default-room.png", alt: "施設画像", class: "room_img" %></td>
+          <% end %>
+          
+          <td><%= link_to room.name, reservation_path %></td>
+          <td><%= room.introduction %></td>
+          <td>￥<%= room.fee %>〜</td>
+          <td><%= room.created_at.to_s(:datetime_jp) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

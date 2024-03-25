@@ -1,0 +1,40 @@
+<div class=accountForm>
+  <div class=accountForm_container>
+    <h2>新規登録</h2>
+
+    <%= form_with model: @room do |f|%>
+      <div class="field">
+        <%= f.label :施設名 %><br />
+        <%= f.text_field :name, class: "fieldContent" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :施設詳細 %><br />
+        <%= f.text_area :introduction, class: "fieldContent" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :料金 %><br />
+        <%= f.text_field :fee, class: "fieldContent" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :住所 %><br />
+        <%= f.text_field :address, class: "fieldContent" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :施設画像 %><br />
+        <%= f.file_field :img, class: "field_img_up" %>
+      </div>
+
+      <%= f.hidden_field :user_id, value: current_user.id %>
+
+      <div class="actions">
+        <%= f.submit "保存", class: "actionsBtn" %>
+      </div>
+    <% end %>
+
+    <%= link_to "キャンセル", "/users" %>     
+  </div>
+</div>

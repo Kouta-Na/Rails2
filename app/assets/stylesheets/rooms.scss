@@ -1,0 +1,50 @@
+.room_img{
+  width: 120px;
+}
+
+.roomDetails{
+  margin-top: 20px;
+  display: flex;
+  gap: 32px;
+
+}
+
+.roomDetails_img{
+  width: 40%;
+  object-fit: contain;
+}
+
+.roomDetailsBody{
+  background-color: #fff8f1;
+  padding: 40px 24px;
+}
+
+.roomDetailsBody_name-and-price{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.roomDetails_name{
+  font-size: 28px;
+  line-height: 39px;
+  margin-bottom: 0;
+}
+
+.roomDetails_price{
+  font-size: 25px;
+  line-height: 32px;
+  margin-bottom: 8px;
+  color: #ff7757;
+}
+
+.roomDetails_address{
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 3px
+}
+.roomDetails_introduction{
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 24px;
+}

@@ -1,0 +1,19 @@
+<section class=userSection>
+  <%= link_to "戻る", :back %>
+  <div class=roomDetails>
+    <% if @room.img? %>
+      <%= image_tag @room.img.url, alt: "施設画像", class: "roomDetails_img" %>
+    <% else %>
+      <%= image_tag "default-room.png", alt: "施設画像", class: "roomDetails_img" %>
+    <% end %>
+
+    <div class=roomDetailsBody>
+      <div class=roomDetailsBody_name-and-price>
+        <p class=roomDetails_name><%= @room.name %></p>
+        <p class=roomDetails_price>￥<%= @room.fee %>〜</p>
+      </div>
+      <p class=roomDetails_address><%= @room.address %></p>
+      <p class=roomDetails_introduction><%= @room.introduction %></p>
+    </div>
+  </div>
+</section>
